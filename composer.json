@@ -1,0 +1,17 @@
+{
+    "name"      : "bluware/tdd",
+    "license"   : "GPL-3.0",
+    "authors"   : [
+        {
+            "name"      : "Eugen Melnychenko",
+            "email"     : "eugen.melnychenko@gmail.com",
+            "homepage"  : "https://github.com/bluware"
+        }
+    ],
+    "autoload"  : {
+        "files" : ["autoload.php"]
+    },
+    "require"   : {
+        "php"   : ">=5.5.0"
+    }
+}

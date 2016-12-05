@@ -1,6 +1,6 @@
 {
     "name"      : "bluware/tdd",
-    "license"   : "GPL-3.0",
+    "license"   : "MIT",
     "authors"   : [
         {
             "name"      : "Eugen Melnychenko",
@@ -12,6 +12,7 @@
         "files" : ["autoload.php"]
     },
     "require"   : {
-        "php"   : ">=5.5.0"
+        "php"               : ">=5.5.0",
+        "bluware/frame"     : "dev-master"
     }
 }

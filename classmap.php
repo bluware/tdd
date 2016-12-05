@@ -2,10 +2,10 @@
 
 return [
     // @ Blu\Essence
-    'Frame\\TDD\\Database\Mock'
+    'Frame\\Tdd\\Database\Mock'
         => __DIR__ . '/database/Database/Mock.php',
-    'Frame\\TDD\\Http\\Ctrl'
+    'Frame\\Tdd\\Http\\Ctrl'
         => __DIR__ . '/http/Ctrl.php',
-    'Frame\\TDD\\Trace'
+    'Frame\\Tdd\\Trace'
         => __DIR__ . '/trace/Trace.php',
 ];

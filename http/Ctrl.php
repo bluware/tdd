@@ -1,23 +1,23 @@
 <?php
 
 /**
- *  TDD builded on Frame Web Frame
+ *  Tdd builded on Frame Web Frame
  *
  *  @package  Frame\TDD
  *  @author   Eugen Melnychenko
  */
-namespace Frame\TDD\Http;
+namespace Frame\Tdd\Http;
 
 use Frame\Http\Uri;
 use Frame\Http\Client;
-use Frame\TDD\Trace;
+use Frame\Tdd\Trace;
 
 use Exception;
 
 /**
  * @subpackage Http
  */
-abstract class Ctrl
+abstract class Ctrl extends \Frame\Controller
 {
     /**
      *  @var array
@@ -85,11 +85,8 @@ abstract class Ctrl
      *
      *  @return mixed
      */
-    public function post($url, $data, callable $call = null)
+    public function post($url, callable $call = null)
     {
-        if (gettype($data) === 'object')
-            $data = $data->to('json');
-
         /**
          *  @var Uri
          */
@@ -98,9 +95,7 @@ abstract class Ctrl
         /**
          *  @var Client
          */
-        $client = Client::post(
-            $uri, $data
-        );
+        $client = Client::post($uri);
 
         /**
          *  @var void
@@ -137,13 +132,8 @@ abstract class Ctrl
         return null;
     }
 
-    public function put($url, $data, callable $call = null)
+    public function put($url, callable $call = null)
     {
-        /**
-         *  @var boolean
-         */
-        if (gettype($data) === 'object')
-            $data = $data->to('json');
 
         /**
          *  @var Uri
@@ -153,9 +143,7 @@ abstract class Ctrl
         /**
          *  @var Client
          */
-        $client = Client::put(
-            $url, $data
-        );
+        $client = Client::put($url);
 
         /**
          *  @var void
@@ -192,14 +180,8 @@ abstract class Ctrl
         return null;
     }
 
-    public function delete($url, $data, callable $call = null)
+    public function delete($url, callable $call = null)
     {
-        /**
-         *  @var mixed
-         */
-        if (gettype($data) === 'object')
-            $data = $data->to('json');
-
         /**
          *  @var Uri
          */
@@ -209,7 +191,7 @@ abstract class Ctrl
          *  @var Client
          */
         $client = Client::delete(
-            $url, $data
+            $url
         );
 
         /**

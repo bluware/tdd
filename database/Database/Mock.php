@@ -1,14 +1,14 @@
 <?php
 
 /**
- *  TDD builded on Frame Web Frame
+ *  Tdd builded on Frame Web Frame
  *
- *  @package  Frame\TDD
+ *  @package  Frame\Tdd
  *  @author   Eugen Melnychenko
  */
-namespace Frame\TDD\Database;
+namespace Frame\Tdd\Database;
 
-use Frame\TDD\Trace;
+use Frame\Tdd\Trace;
 use Frame\Database;
 
 use Exception;

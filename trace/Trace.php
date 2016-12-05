@@ -6,7 +6,7 @@
  *  @package  Frame\TDD
  *  @author   Eugen Melnychenko
  */
-namespace Frame\TDD\Http;
+namespace Frame\TDD;
 
 use Exception;
 
@@ -58,6 +58,9 @@ class Trace
     public static function gather()
     {
         $report = [
+            '',
+            '----------#' . time() . '------------',
+            '',
             sprintf(
                 '%s commit. %s success. %s fail',
                 static::$report['success'] + static::$report['fail'],
@@ -67,17 +70,15 @@ class Trace
             '',
         ];
 
-        foreach (static::$trace as $i => $error) {
+        foreach (static::$trace as $i => $e) {
             array_push(
                 $report, sprintf(
-                    "%s#%s in %s on %s\n> %s", $i, $error->getCode(), $error->getFile(), $error->getLine(), $error->getMessage()
+                    "> # %s\n> %s", $i, $e->getMessage()
                 )
             );
-
-            $report = array_merge(
-                $report, $errir->getTrace()
-            );
         }
+
+        array_push($report, '', '----------#end------------', '', '');
 
         return join("\n", $report);
     }

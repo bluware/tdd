@@ -62,7 +62,7 @@ class Trace
             '----------#' . time() . '------------',
             '',
             sprintf(
-                '%s commit. %s success. %s fail',
+                "%s commit \033[32m%s success\033[0m \033[31m%s fail\033[0m",
                 static::$report['success'] + static::$report['fail'],
                 static::$report['success'],
                 static::$report['fail']

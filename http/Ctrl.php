@@ -78,6 +78,13 @@ abstract class Ctrl
         return null;
     }
 
+    /**
+     *  @param  string    $url  [description]
+     *  @param  mixed    $data [description]
+     *  @param  callable $call [description]
+     *
+     *  @return mixed
+     */
     public function post($url, $data, callable $call = null)
     {
         if (gettype($data) === 'object')
